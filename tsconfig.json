@@ -1,0 +1,72 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types", // 默认值
+      "src/types"
+    ], // 只有typeRoots下面的包才会被包含进来
+    "target": "ESNext", // 将代码编译为最新版本的 JS
+    "useDefineForClassFields": true, // 使用 Object.defineProperty 定义 class 中的属性，而非使用 obj.key = value 的形式定义属性
+    "module": "ESNext", // 使用 ES Module 格式打包编译后的文件
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ], // 引入 ES 最新特性和 DOM 接口的类型定义
+    "skipLibCheck": true, // 跳过对 .d.ts 文件的类型检查
+    /* Bundler mode */
+    "moduleResolution": "node", // 使用 Node 的模块解析策略
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true, // 允许引入 JSON 文件
+    "isolatedModules": true, // 该属性要求所有文件都是 ES Module 模块。
+    "noEmit": true, // 不生成输出文件。
+    "jsx": "preserve", // 保留原始的 JSX 代码，不进行编译
+    /* Linting */
+    "strict": true, // 启用所用严格的类型检查
+    "noUnusedLocals": true, // 是否检查未使用的局部变量
+    "noUnusedParameters": true, // 是否检查未使用的参数
+    "noFallthroughCasesInSwitch": true, // 报告switch语句的fallthrough错误。（即，不允许switch的case语句贯穿）
+    "sourceMap": true, // 生成 sourceMap 文件
+    "esModuleInterop": true, // 该属性要求所有文件都是 ES Module 模块。
+    "baseUrl": "./", // 	解析非相对模块名的基准目录
+    "paths": {
+      "@": [
+        "src"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    } // paths
+    // 
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ]
+  // "references": [
+  //   {
+  //     "path": "./tsconfig.node.json"
+  //   }
+  // ]
+}
+// 对tsconfig.json 的配置理解
+// {
+//   "extends": "",
+//   "compileOnSave": true,
+//   "compilerOptions": {},
+//   "files": [],
+//   "include": [],
+//   "exclude": [],
+//   "references": []
+// }
+// extends 继承配置
+// compileOnSave 可以让IDE在保存文件的时候根据tsconfig.json重新生成文件。
+// 要想支持这个特性需要Visual Studio 2015， TypeScript1.8.4以上并且安装atom-typescript插件。
+// compilerOptions compilerOptions
+// files 指定一个包含相对或绝对文件路径的列表
+// include 指定一个文件glob匹配模式列表
+// exclude 指定一个文件glob匹配模式列表
+// references 一个对象的数组，指明要引用的工程。每个引用的path属性都可以指向到包含tsconfig.json文件的目录，
+// 或者直接指向到配置文件本身（名字是任意的）
+// 
